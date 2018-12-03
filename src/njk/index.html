@@ -26,17 +26,19 @@
   <img class="card-img-top" src="assets/img/members/{{member.imagebw}}" alt="Card image cap">
   <div class="card-body text-center">
     <h5 class="card-title">{{member.name}}</h5>
-    <a href="{{member.slug}}.html" class="btn btn-primary">Visit Band Member</a>
+    <a href="{{member.slug}}.html" class="btn btn-dark">Visit Band Member</a>
   </div>
 </div>
 {%endfor%}
 </div>
 
-<h2 class="title">Discography</h2>
-<ul class="list-unstyled" style="width: 15rem:">
+<h2 class="title text-center">Discography</h2>
+<ul class="list-unstyled d-lg-inline" style="width: 15rem:">
 {%for disc in discography%}
-  <li class="media border-dark mb-4">
+  <li class="media border-dark mb-4 d-lg-inline text-center" >
+  <div class= "text-center">
     <img class="mr-3" src="assets/img/discs/{{disc.image}}" alt="Generic placeholder image">
+  </div>
     <div class="media-body">
       <h5 class="mt-0 mb-1 album-title">{{disc.title}}</h5>
       {{disc.year}}
