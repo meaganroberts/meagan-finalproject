@@ -2,13 +2,26 @@
 
 {% block content %}
 <article class="container">
-  <div class="row">
-    <div class="col-sm-4 left-rail">
-      {% block info %}{% endblock %}
-    </div>
-    <div class="col-sm-8">
-      {% block story %}{% endblock %}
+  <h1 class"title">About {{members.name}}</h1>
 
+  <div class="row">
+    <div class="col-sm-4 biodata">
+      <img class="img-fluid" src="../assets/img/members/{{ members.image }}" alt="band member image">
+      <dl>
+        <dt>Name:</dt>
+        <dd>{{members.name}}</dd>
+        <dt>Instruments:</dt>
+        <dd>{{members.instruments}}</dd>
+        <dt>Tenure:</dt>
+        <dd>{{members.tenure}}</dd>
+        <dt>Birthplace:</dt>
+        <dd>{{members.birthplace}}</dd>
+        <dt>Birthdate:</dt>
+        <dd>{{members.birthdate}}</dd>
+      </dl>
+    </div>   
+    <div class="col-sm-8 member-story">
+      <p>{{members.text | safe}}</p>
     </div>
   </div>
 </article>

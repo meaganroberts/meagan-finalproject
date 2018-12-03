@@ -1,32 +1,50 @@
 {% extends '_layouts/base.njk' %}
 
-{% block page_title %}New index page title{% endblock %}
+{% block page_title %}QUEEN | Home Page{% endblock %}
 
 {% block content %}
 
-<div class="container">
+<div class="container text-center">
   <div class="row">
     <div class="col">
-    <h1>Main headline</h1>
-    <p class="author">By {% for author in authors %}
-      <a href="{{ author.link }}" target="_blank">{{ author.name }}</a>{% if not loop.last %}{% if loop.revindex0 == 1 %} and {% else %}, {% endif %}{% endif %} {% endfor %}
-      <br> Published {{ publish_date }}
-    </p>
+    <h2>About the Band</h2>
     </div>
   </div>
   <div class="row">
     <div class="col">
     <p>
-      Lucas ipsum dolor <a href="detail-page.html">link to detail-page.html</a> amidala sith dooku solo moff organa obi-wan windu. Gamorrean binks wedge darth. Mon darth mon kit ponda solo. Moff watto ackbar mothma moff anakin. Lando skywalker lars fett calrissian lars organa. Organa kenobi wedge darth jawa skywalker anakin. Twi'lek kit darth calamari lando kamino droid. Darth jawa fett grievous maul. Palpatine obi-wan leia tusken raider dagobah. Twi'lek qui-gon boba antilles yoda thrawn. Wampa luuke wampa skywalker. Moff ponda ackbar dagobah kit lobot jinn solo.
+       Queen are a British rock band that formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals and piano), Brian May (lead guitar and vocals), Roger Taylor (drums and vocals), and John Deacon (bass guitar). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock, into their music. For more information, visit Queen's page on <a href="https://en.wikipedia.org/wiki/Queen_(band)">Wikipedia.</a>
     </p>
-      <ul> 
-        {% for book in books %}
-          <li>{{ book.title }}, {{ book.author }}</li>
-        {% else %}
-          <li>This would display if the 'books' collection were empty</li>
-        {% endfor %}
-     </ul>
-    </div>
+</div>
+</div>
+
+<h2 class="title text-center">Meet the Members</h2>
+<ul class="card-deck">
+{%for member in members%}
+
+<div class="card border-medium mb-4" style="width: 15rem;">
+  <img class="card-img-top" src="assets/img/members/{{member.imagebw}}" alt="Card image cap">
+  <div class="card-body text-center">
+    <h5 class="card-title">{{member.name}}</h5>
+    <a href="{{member.slug}}.html" class="btn btn-primary">Visit Band Member</a>
   </div>
 </div>
+{%endfor%}
+</div>
+
+<h2 class="title">Discography</h2>
+<ul class="list-unstyled" style="width: 15rem:">
+{%for disc in discography%}
+  <li class="media border-dark mb-4">
+    <img class="mr-3" src="assets/img/discs/{{disc.image}}" alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1 album-title">{{disc.title}}</h5>
+      {{disc.year}}
+    </div>
+  </li>
+</div>
+</div>
+{%endfor%}
+</ul>
 {% endblock %}
+</div>
