@@ -6,47 +6,50 @@
 
 <div class="container text-center">
   <div class="row">
-    <div class="col">
+  <div class="col">
     <h2>About the Band</h2>
-    </div>
+  </div>
   </div>
   <div class="row">
-    <div class="col">
+  <div class="col">
     <p>
        Queen are a British rock band that formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals and piano), Brian May (lead guitar and vocals), Roger Taylor (drums and vocals), and John Deacon (bass guitar). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock, into their music. For more information, visit Queen's page on <a href="https://en.wikipedia.org/wiki/Queen_(band)">Wikipedia.</a>
     </p>
-</div>
-</div>
+  </div>
+  </div>
 
-<h2 class="title text-center">Meet the Members</h2>
-<ul class="card-deck">
-{%for member in members%}
 
-<div class="card border-medium mb-4" style="width: 15rem;">
+  <h2 class="title text-center">Meet the Members</h2>
+  <div class="card-deck">
+  <div class="row">
+  {%for member in members%}
+  <div class="col-sm-6 col-lg-3">
+  <div class="card border-medium mb-4" style="width: 15rem;">
   <img class="card-img-top" src="assets/img/members/{{member.imagebw}}" alt="Card image cap">
   <div class="card-body text-center">
     <h5 class="card-title">{{member.name}}</h5>
     <a href="{{member.slug}}.html" class="btn btn-dark">Visit Band Member</a>
+    </div>
   </div>
-</div>
-{%endfor%}
-</div>
+  </div>
+  {%endfor%}
+  </div>
+  </div>
 
-<h2 class="title text-center">Discography</h2>
-<ul class="list-unstyled d-lg-inline" style="width: 15rem:">
-{%for disc in discography%}
-  <li class="media border-dark mb-4 d-lg-inline text-center" >
-  <div class= "text-center">
+  <h2 class="title text-center">Discography</h2>
+  <div class="list-unstyled d-lg-inline" style="width: 15rem:">
+  <div class="row">
+  {%for disc in discography%}
+  <div class="col-sm-12 col-lg-4">
+  <div class="media border-dark mb-4 d-lg-inline text-center" >
     <img class="mr-3" src="assets/img/discs/{{disc.image}}" alt="Generic placeholder image">
-  </div>
     <div class="media-body">
       <h5 class="mt-0 mb-1 album-title">{{disc.title}}</h5>
       {{disc.year}}
     </div>
-  </li>
+  </div>
+  </div>
+  {%endfor%}
 </div>
 </div>
-{%endfor%}
-</ul>
 {% endblock %}
-</div>
